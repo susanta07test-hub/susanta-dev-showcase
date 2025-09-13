@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { ArrowDown, Mail, Eye } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Scene3D from './Scene3D';
 import heroImage from '@/assets/hero-bg.jpg';
 
 const Hero = () => {
@@ -13,18 +14,11 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div className="absolute inset-0 bg-background/80" />
-      </div>
+      {/* 3D Background */}
+      <Scene3D />
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 z-1 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
